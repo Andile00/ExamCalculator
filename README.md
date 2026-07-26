@@ -15,4 +15,6 @@ Run the App
 Open your terminal and run:
 
 docker pull andile01/exam-calculator:latest
+
+
 docker run -it andile01/exam-calculator:latest
