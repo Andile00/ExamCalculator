@@ -3,11 +3,11 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 #Sets up the working directory
 WORKDIR /app
 #Copies ONLY the .csproj file first to the container
-COPY ExamCalculator/*.csproj ./ExamCalculator/
+COPY *.csproj ./ExamCalculator/
 WORKDIR /app/ExamCalculator
 RUN dotnet restore
 
-COPY ExamCalculator/. ./
+COPY . ./
 RUN dotnet publish -c Release -o /app/publish
 #Uses runtime img to execute the application 
 FROM mcr.microsoft.com/dotnet/runtime:8.0
