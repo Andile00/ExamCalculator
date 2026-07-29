@@ -6,9 +6,9 @@ WORKDIR /app
 COPY *.csproj ./ExamCalculator/
 WORKDIR /app/ExamCalculator
 RUN dotnet restore
-
 COPY . ./
 RUN dotnet publish -c Release -o /app/publish
+
 #Uses runtime img to execute the application 
 FROM mcr.microsoft.com/dotnet/runtime:8.0
 WORKDIR /app
